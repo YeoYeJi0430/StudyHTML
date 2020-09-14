@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM example</title>
+        <script>
+            window.onload = function()
+            {
+                //01 setAttribute
+                // //방법1
+                // var image = document.getElementById("image");
+                // // var image(<-얘는 변수) = document.getElementById("image<-얘가 아래쪽에 img id에서 id=image");
+                // //image가져옴
+                // image.width = 640;//바로 값지정, ==image.setAttribute("width","800");과 같은뜻
+                // image.height=400;
+                // image.src = "http://placehold.it/640x400";
+
+                // //방법2
+                // //alert(image.getAttribute("width"));//width값 찍어봄
+                // image.setAttribute("width","200");//width변경
+
+
+                // document.body.setAttribute("data-custom","Hello JS");
+                // //body에 Attribute추가
+
+                // var dataCustom = document.body.getAttribute("data-custom");
+                // //body에 Attribute가져옴
+                // alert(dataCustom);
+
+                //02 Timer
+                var clock = document.getElementById("clock");
+                setInterval(function(){
+                    var now = new Date();
+                    clock.innerHTML=now.toString();
+                },
+                1000)
+            }
+        </script>
+    </head>
+    <body>
+        <!--01-->
+        <!-- <img id="image"/> -->
+        
+        <h1 id="clock"/>
+    </body>
+</html>

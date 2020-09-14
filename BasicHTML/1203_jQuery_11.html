@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery exam</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                var count = 0;
+                var image = $("#image"); //id로 값 가져옴
+                var frames = [
+                    "image/0.png",
+                    "image/1.png",
+                    "image/2.png",
+                    "image/3.png",
+                    "image/4.png",
+                    "image/5.png",
+                    "image/6.png",
+                    "image/7.png",
+                    "image/8.png",
+                    "image/9.png",
+                    "image/10.png",
+                    "image/11.png",
+                    "image/12.png",
+                    "image/13.png",
+                    "image/14.png"
+                ];
+
+                setInterval(function(){
+                    image.attr("src",frames[count%frames.length]) //15가되면 0이됨
+                    count += 1;
+                }, 50);//50ms마다 값을 바꿈
+            });
+        </script>
+    </head>
+    <body>
+       <img id="image"/>
+    </body>
+</html>

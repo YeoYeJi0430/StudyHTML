@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample</title>
+        <!--내부스타일-->
+        <!--p쓴곳은 모두 적용-->
+        <style>
+            .header{
+                color: red;
+            }/*.header는 class(중복가능)랑 #header는 id(중복불가능)랑*/
+            p{
+                background-color: cornsilk;
+                /*들여쓰기*/margin-left: 40px ;
+            }
+            b{
+                /*Lorem문장에 b로 묶여있는 elit만 적용*/
+                font-size: xx-large;
+                color: deeppink;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="header">HTML 기본</h1><!--#header랑짝-->
+            <h1 class="header">HTML</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="test01.html">메뉴1</a></li>
+                <li><a href="test02.html">메뉴2</a></li>
+                <li><a href="test03.html">메뉴3</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <article>
+                    <h1 class="header">Lorem</h1>
+                    <p>Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing <b>elit</b>,
+                        sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim 
+                        ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse 
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+                <article>
+                    <h1>Lorem</h1>
+                    <p>Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing <b>elit</b>, 
+                        sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim 
+                        ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse 
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>

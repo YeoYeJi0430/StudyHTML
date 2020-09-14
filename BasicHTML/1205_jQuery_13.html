@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>jQuery Basic</title>
+        <!-- <script src="js/jquery-3.5.1.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script>
+           $(document).ready(function() { 
+               var count = 0;
+               var aDocument = function(){
+                   for(var index = 0; index < 20; index++){
+                       $("<h1>Infinity Scroll " + count + "</h1>").appendTo("body");
+                       count++;
+                   }
+               }
+               aDocument();
+
+               $(window).scroll(function(){
+                    var scrollHeight = $(window).scrollTop() + $(window).height();
+                    var documentHeight = $(document).height();
+
+                    if(scrollHeight == documentHeight){
+                        aDocument();
+                    }
+               });
+           });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

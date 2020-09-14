@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM example</title>
+        <script>
+            window.onload = function(){//onload는 이벤트! 따라서 함수로 만들어서 사용
+                //01
+                // document.querySelector("h1").style.backgroundColor="green";//첫번째 h1만 적용
+                // document.querySelector("h2").style.backgroundColor="blue";
+
+                //02
+                // var selector = document.getElementById("selector");//h1의 아이디 가져옴
+                // selector.style.backgroundColor="green";//TEST의 배경을 그린으로 적용
+                // selector.style.color = "white";
+                // selector.innerHTML = "<i>Javascript</i> changed";//TEST글자를 Javascript changed로 바꿔줌,""안에서<i></i>태그 사용가능
+
+                //03 querySelector
+                // var header = document.querySelector("h1");
+                // header.style.backgroundColor="red";
+                // header.style.color="yellow";
+                // header.innerHTML="한글!"
+
+                //04 querySelectorAll
+                var headers = document.querySelectorAll("h1");
+                for(var index = 0; index < headers.length; index++){
+                    var header = headers[index];
+                    header.style.backgroundColor="green";
+                    header.style.color="white";
+                    header.innerHTML = "From javascript : " + index;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Lorem ipsum dolor sit amet, </h1>
+        <h2>consectetur adipiscing elit, </h2>
+        <h1 id="selector">TEST</h1>
+    </body>
+</html>

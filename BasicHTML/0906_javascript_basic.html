@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>javascript example</title>
+        <script>
+            // //01 변수초기화
+            // //변수 초기화
+            // var pi = 3.141592;
+            // var radius = 10;
+            // //출력
+            // alert("결과는 " + (2*pi*radius));
+
+            // //02 변수사용날짜
+            // var date = new Date();
+            // var year = date.getFullYear();
+            // var month = date.getMonth()+1;
+            // var day = date.getDay();
+            // var hour = date.getHours();
+            // var min = date.getMinutes();
+            // var sec = date.getSeconds();
+            // var ms = date.getMilliseconds();
+
+            // alert(year+"년"+month+"월"+day+"일"+hour+"시"+min+"분"+sec+"초"+ms);
+
+            // //03 배열
+            // var array = [273, "문자열", true, function() {var i = 10;}, {}, [1,3]];
+            // alert(array[5][1]); //3나옴
+
+            // //04 반복문
+            // var output = 0;
+            // for(let index = 0; index <= 100; index++)
+            // {
+            //     output+=index;
+            // }
+
+            // alert(output);
+
+            // //05 함수
+            // var pi = 3.154;
+            // var func = function(){
+            //     alert("함수1");
+            // };
+
+            // alert(typeof(pi));
+            // alert(typeof(func));
+            // alert(func);
+
+            // //06 함수-일반함수
+            // var result = 0;
+            // function func(x){
+            //     return x*x*x;
+            // }
+            // result=func(8);
+            // alert(result);
+
+            //07 콜백함수
+            function callTenTime(fncParam){
+                for (let index = 0; index < 10; index++) {
+                    fncParam();
+                }
+            }
+            var fnc = function(){
+                alert("Function call");
+            }
+
+            callTenTime(fnc)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

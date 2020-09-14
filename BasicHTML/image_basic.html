@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/> <!--인터넷익스플로어에서 한글 깨져서 넣음-->
+        <title>이미지 테스트</title>
+    </head>
+    <body>
+        <img src="image/cat.jpg" alt="고양이" width="300"/>
+        <img src="../image/cat.jpg" alt="대체글자(고양이)" width="300"/><!--경로 틀렸음 따라서 대체글자가 나옴-->
+        <br/>
+        <audio  controls="controls">
+            <source src="media/Critical (1).wav" type="audio/wav"/>
+        </audio>
+        <br/>
+        <video controls = "controls" preload="auto">
+            <source src="media/cat.wmv" type="video/wmv"/>
+        </video>
+    </body>
+</html>

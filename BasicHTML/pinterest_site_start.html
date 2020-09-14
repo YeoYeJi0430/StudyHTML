@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Caterest web</title>
+        <!--초기화 스타일-->
+        <style>
+            *{
+                margin: 0; padding: 0;
+                font-family: 'Malgun Gothic',sans-serif;
+            }
+
+            a{text-decoration: none;/*링크 아래쪽 밑줄 없애기*/}
+            img{border: 0px;}
+            li{list-style: none;}
+            html{background-color: #F7F5F5;}
+        </style>
+        <!--헤더 스타일-->
+        <style>
+            #main-header{
+                height: 40px;
+                background: #FAF7F7;
+                position: relative;/*관계에 따라 자리잡음(?)*/
+            }
+            .header-search-form{
+                float: left;
+            }
+            .header-menu{
+                float: right;
+            }
+            .header-title{
+                position: absolute;/*절대경로*/
+                width: 200px;
+                height: 140px;/*정 사이즈는 40px, 이거 늘리면 로고 여러개 나오게 됨*/
+                left: 50%;
+                margin-left: -100px;
+                background: url("image/logo.png");
+                background-repeat: no-repeat;/*로고 여러개 나오는걸 방지하기 위해 삽입*/
+                text-indent: -9999px;
+            }
+        </style>
+        <!--풀다운 스타일-->
+        <style>
+            .outer-menu{
+                float: left;
+                width: 100px;
+                height: 20px;
+                line-height: 20px;
+                padding: 10px 0;
+                position: relative;
+                text-align: center;
+                font-size: 13px;
+                font-weight: bold;
+                z-index: 9999;
+            }
+            .outer-menu:hover{
+                background-color: #E1DFDF;
+            }
+            .inner-menu{
+                display: none;
+                background-color: #FFFFFF;
+                margin-top: 10px;
+                width: 100%;
+                border-top: 1px solid #CCCACA;/*진한회색으로 선긋기*/
+                box-shadow: 0 2px 4px rgba(34,25,25,0.5);
+            }
+            .inner-menu a{
+                display: block;
+                padding: 5px 10px;
+                z-index: 5000;
+            }
+            .inner-menu a:hover{
+                background-color: #E1DFDF;
+            }
+        </style>
+        <!--네비게이션 스타일-->
+        <style>
+            #main-navigation{
+                height: 30px;
+                background-color: #FAF7F7;
+                box-shadow: 1px 3px 3px rgba(34,25,25,0.4);
+            }
+            #main-navigation > ul > li {
+                display: inline;
+                font-size: 13px;
+            }
+        </style>
+        <!--검색양식 스타일-->
+        <style>
+            
+        </style>
+        <!--종이양식 스타일-->
+        <style>
+            .paper {
+                width: 190px;
+                margin-top: 10px;
+                padding: 15px 15px 0px;
+                font-size: 11px;
+                background-color: white;
+                box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+            }
+            .paper-content{
+                margin: 0 -15px;
+                margin-top: 10px;
+                padding: 10px 15px;
+                background-color: #F2F0F0;
+                overflow: hidden;
+            }
+            .paper-description{
+                margin: 10px 0;
+            }
+            .paper-link{
+                display: block;
+                float: left;
+            }
+            .paper-text{
+                float: left;
+                width: 150px;
+                margin-left: 10px;
+            }
+        </style>
+        <!--섹션 스타일-->
+        <style>
+            #main-section{
+                width: 920px;
+                margin: 0 auto;
+            }
+            @media (max-width: 919px){
+                #main-section{ width: 690px;}
+            }
+            @media (min-width: 920px) and (max-width: 1149px){
+                #main-section{ width: 920px;}
+            }
+            @media (min-width: 1150px) and (max-width: 1379px){
+                #main-section{ width: 1150px;}
+            }
+        </style>
+        <!--https://masonry.desandro.com/#download : 참조-->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <!--https://imagesloaded.desandro.com/ : 참조-->
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".outer-menu").hover(function(){
+                    $(this).find(".inner-menu").css("display","block");
+                }, function(){
+                    /*마우스 내리면?*/
+                    $(this).find(".inner-menu").css("display","none");
+                });
+
+                $("#main-section").imagesLoaded(function(){
+                    $("#main-section").masonry({
+                        itemSelector: '.paper',/*클래스를 셀렉*/
+                        columnWidth: 230,
+                        isAnimated: true
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!--헤더 영역-->
+        <header id="main-header">
+            <div class="header-search-form">
+                <form>
+                    <input type="search" class="input-search"/>
+                    <input type="submit" class="input-search-submit" value="검색"/>
+                </form>
+            </div>
+            <h1 class="header-title">Caterest</h1>
+            <div class="header-menu">
+                <ul class="outer-menu">
+                    <li>
+                        <!--리스트?,링크?-->
+                        <a href="#">정보</a>
+                        <ul class="inner-menu">
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="outer-menu">
+                    <li>
+                        <!--리스트?,링크?-->
+                        <a href="#">사용자</a>
+                        <ul class="inner-menu">
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                            <li><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!--네비게이션 영역-->
+        <nav id="main-navigation">
+            <ul>
+                <li><a href="#">Following</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Gift</a></li>
+            </ul>
+        </nav>
+
+        <!--본문 영역-->
+        <section id="main-section">
+            <!--반복 영역 시작-->
+            <div class="paper">
+                <div class="paper-holder">
+                    <a><img width="190" src="http://placehold.it/190x300"></a>
+                </div>
+                <p class="paper-description">Lorem</p>
+                <div class="paper-content">
+                    <a class="paper-link" href="#">
+                        <img src="http://placehold.it/190x100"/>
+                    </a>
+                    <p class="paper-text">Lorem</p>
+                </div>
+            </div>
+            <div class="paper">
+                <div class="paper-holder">
+                    <a><img width="190" src="http://placehold.it/190x300"></a>
+                </div>
+                <p class="paper-description">Lorem</p>
+                <div class="paper-content">
+                    <a class="paper-link" href="#">
+                        <img src="http://placehold.it/190x100"/>
+                    </a>
+                    <p class="paper-text">Lorem</p>
+                </div>
+            </div>
+            <div class="paper">
+                <div class="paper-holder">
+                    <a><img width="190" src="http://placehold.it/190x300"></a>
+                </div>
+                <p class="paper-description">Lorem</p>
+                <div class="paper-content">
+                    <a class="paper-link" href="#">
+                        <img src="http://placehold.it/190x100"/>
+                    </a>
+                    <p class="paper-text">Lorem</p>
+                </div>
+            </div>
+            <div class="paper">
+                <div class="paper-holder">
+                    <a><img width="190" src="http://placehold.it/190x300"></a>
+                </div>
+                <p class="paper-description">Lorem</p>
+                <div class="paper-content">
+                    <a class="paper-link" href="#">
+                        <img src="http://placehold.it/190x100"/>
+                    </a>
+                    <p class="paper-text">Lorem</p>
+                </div>
+            </div>
+            <div class="paper">
+                <div class="paper-holder">
+                    <a><img width="190" src="http://placehold.it/190x300"></a>
+                </div>
+                <p class="paper-description">Lorem</p>
+                <div class="paper-content">
+                    <a class="paper-link" href="#">
+                        <img src="http://placehold.it/190x100"/>
+                    </a>
+                    <p class="paper-text">Lorem</p>
+                </div>
+            </div>
+            <!--반복 영역 끝-->
+        </section>
+        <!--라이트 박스-->
+        <div id="darken-background">
+            <div id="lightbox">
+                <div class="user-information">
+                    <a class="user-information-image" href="#">
+                        <img src="http://placehold.it/70x70"/>
+                    </a>
+                    <!--생략-->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

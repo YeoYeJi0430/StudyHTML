@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample</title>
+        <style>
+            body{
+                background-image: url("image/space.jpg");
+                background-size: 100%;
+                opacity: 0.5;
+            }
+            a{
+                text-decoration: none;
+                color:black;
+            }
+            a:hover{
+                /*메뉴에 마우스 올렸을때 빨간색으로 바뀜*/
+                color: red;
+            }
+            nav ul{
+                padding-top: 10px;
+            }
+            nav ul li{
+                display: inline;/*메뉴를 가로 정렬*/
+                border-left: 1px solid #999;/*각 메뉴 왼쪽보더에 줄 그어짐*/
+                font:bold 12px Dotum;
+                padding: 0 10px;
+            }
+            nav ul li:first-child{border-left: none;}/*|메뉴1|메뉴2|메뉴3 이었던 것을 메뉴1|메뉴2|메뉴3으로 바꿈 보더 제일 왼쪽 없앰*/
+            #custom_hd {
+                width: 800px;
+                margin: 0 auto;/*위치 : center*/
+                background-color: hotpink;
+                color: white;
+            }
+            #custom_nav{
+                width: 800px;
+                margin: 0 auto;
+                overflow:hidden/*스크롤이 생기지 않도록*/
+            }
+            #wrap{
+                width: 1000px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            #custom_aside{
+                width: 300px;
+                float: left;
+                background-color: tomato;
+            }
+            #custom_content{
+                width: 700px;
+                float: left;
+                background-color: teal;
+            }
+            #custom_content > article > h1:hover{
+                /*마우스 올렸을 때*/
+                color: lime;
+            }
+            #custom_content > article > h1:active{
+                /*클릭했을때*/
+                color: mediumpurple;
+            }
+            .item{
+                color: yellow;
+            }
+            .second_footer{
+                background-color: coral;
+                border-color: 1px #0000ff;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="custom_hd">
+            <h1>HTML 기본</h1>
+        </header>
+        <nav id="custom_nav">
+            <ul>
+                <li><a href="test01.html">메뉴1</a></li>
+                <li><a href="test02.html">메뉴2</a></li>
+                <li><a href="test03.html">메뉴3</a></li>
+            </ul>
+        </nav>
+        <main id="wrap">
+            <aside id="custom_aside">
+                <p>
+                    Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim 
+                        ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </aside>
+            <section id="custom_content">
+                <article>
+                    <h1>Lorem</h1>
+                    <p>Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim 
+                        ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse 
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+                <article>
+                    <h1>Lorem</h1>
+                    <p>Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim 
+                        ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse 
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+            </section>
+        </main>
+        <footer id="custom_footer">
+            <!--item이랑 second_footer 클래스 두 개 씀-->
+            <address class="item second_footer">부산 광역시 남구</address>
+        </footer>
+    </body>
+</html>

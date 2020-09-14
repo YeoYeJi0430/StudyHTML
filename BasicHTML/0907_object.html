@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>javascript example</title>
+        <script>
+            // //객체 선언
+            // var product = {
+            //     제품명 : "망고",
+            //     유형 : "당절임",
+            //     성분 : "망고,설탕,색소",
+            //     원산지 : "필리핀"
+            // };
+
+            // //alert(typeof(product));
+            // //alert(product["제품명"]+" "+product.원산지);
+            // var result = "";
+            // for(var key in product){
+            //     //alert(key+" : "+product[key]);
+            //     result += key + " : " + product[key] + "\n";
+            // }
+            // alert(result);
+            
+            //객체선언2
+            var person = {
+                name : "예디",
+                have : function(food){
+                    alert(this.name + "가 " + food + "을(를) 먹습니다.")
+                }
+            }
+            person.have("BB");
+
+            var result = "";
+            for(var key in product){
+                result += key + " : " + product[key] + "\n";
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
